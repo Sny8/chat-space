@@ -34,18 +34,18 @@
         }
       }
     }
-    .groups {
+    .side-bar__groups-list {
       height: calc(100vh - 100px);
       width: 300px;
       background: #2f3e51;
       padding: 20px;
       box-sizing: border-box;
-      .group_techcamp {
+      .group__name {
         margin-bottom: 5px;
         font-size: 15px;
         color: #ffffff
       }
-      .group_text {
+      .group__message {
         margin-bottom: 40px;
         font-size: 11px;
         color: #ffffff
@@ -161,3 +161,4 @@
 @import "font-awesome";
 @import "modules/user";
 @import "modules/flash";
+@import "modules/group";
