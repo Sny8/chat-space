@@ -1,24 +1,23 @@
 .chat-main
-  .group-info
-    .group-info_left
-      .group-info_test test
-      .group-info_text Member:masa
-    .group-info_right
+  .main-header
+    .main-header__left-box
+      .main-header__left-box__current-group
+        = @group.name
+      .main-header__left-box__member-list
+        Member:
+        - @group.users.each do |user|
+          = user.name
+
+    .main-header__edit-btn
       = link_to edit_group_path(current_user) do
-  .message-list
-    .message-list_text
-      .message-list_name masa
-      .message-list_date 2019/11/20(Wed) 17:43:01
-    .message-list_comment おはよう！
-    .message-list_text
-      .message-list_name masa
-      .message-list_date 2019/11/20(Wed) 17:43:34
-    .message-list_comment 今日は夜から雨
-  .message-form
-    %form.new_message
-    .input-box
-      %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-      %label{class: "input-box__image"}
-        = icon('fas', 'image')
-        %input{type: "file", class: "input-box__image__file"}
-    %input{type: "submit", class: "submit-btn"}
+        Edit
+  .messages
+    = render @messages
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
