@@ -60,6 +60,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
 gem 'carrierwave'
 gem 'fog-aws'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -71,6 +75,3 @@ gem 'pry-rails'
 gem 'mini_magick'
 gem 'jquery-rails'
 
-group :production do
-  gem 'unicorn', '5.4.1'
-end
