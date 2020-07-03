@@ -1,3 +1,6 @@
+a {
+  text-decoration: none;
+}
 .wrapper {
   height: 100%;
   width: 100%;
@@ -12,6 +15,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #ffffff;
       .side-header_box {
         height: 20px;
         width: 260px;
@@ -23,8 +27,8 @@
           display: flex;
         }
         ul {
-          display: flex;
           justify-content: flex-end;
+          display: flex;
           li {
             padding-left: 5px;
             a {
@@ -43,7 +47,7 @@
       .group__name {
         margin-bottom: 5px;
         font-size: 15px;
-        color: #ffffff
+        color: #ffffff;
       }
       .group__message {
         margin-bottom: 40px;
